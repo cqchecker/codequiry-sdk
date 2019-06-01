@@ -1,6 +1,6 @@
 {
   "name": "codequiry",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Node JS SDK for Codequiry's Plagiarism Checking API ",
   "main": "index.js",
   "scripts": {
