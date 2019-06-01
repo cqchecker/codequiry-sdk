@@ -14,3 +14,7 @@ https://codequiry.com
 
 API Docs:
 https://codequiry.com/usage/api
+
+### Installation
+
+`npm install codequiry`
