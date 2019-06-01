@@ -17,4 +17,73 @@ https://codequiry.com/usage/api
 
 ### Installation
 
-`npm install codequiry`
+```
+npm install codequiry
+```
+
+```
+var Codequiry = require('codequiry')
+```
+
+Setting your API Key
+```
+Codequiry.setAPIKey('YOUR_API_KEY')
+```
+
+Getting account information
+```javascript
+Codequiry.account(function(data, err)) {
+	 if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Getting checks
+```javascript
+Codequiry.checks(function(data, err)) {
+	 if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Creating checks (specify name and programming language)
+```javascript
+Codequiry.createCheck('CheckNameHere', 'java', function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Uploading to a check (specify check_id and file (must be a zip file)) 
+```javascript
+Codequiry.uploadFile(CHECK_ID, './test.zip', function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Starting a check (specify check_id and if running database check or web check) 
+```javascript
+Codequiry.startCheck(CHECK_ID, false, false, function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Getting a check information/status
+```javascript
+Codequiry.getCheck(CHECK_ID, function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Getting results overview
+```javascript
+Codequiry.getOverview(CHECK_ID, function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+Getting specific results of a submission
+```javascript
+Codequiry.getResults(CHECK_ID, SUBMISSION_ID function(data, err) {
+    if (!err) console.log(data);
+    else console.log(err)
+});
+```
+
