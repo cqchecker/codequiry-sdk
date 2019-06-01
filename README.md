@@ -29,7 +29,7 @@ var Codequiry = require('codequiry')
 ```
 Codequiry.setAPIKey('YOUR_API_KEY')
 ```
-### Usage
+## Usage
 #### Getting account information
 ```javascript
 Codequiry.account(function(data, err)) {
@@ -86,4 +86,14 @@ Codequiry.getResults(CHECK_ID, SUBMISSION_ID function(data, err) {
     else console.log(err)
 });
 ```
-
+## Realtime checking progress
+This is an example of the listener, you can call this after getting a check status or after starting a check (both will reutrn a job ID, which you can listen to). Here we will listen to specific CHECK_ID.
+```javascript
+Codequiry.getCheck(CHECK_ID, function(data) {
+    console.log(data.check.job_id);
+    Codequiry.checkListen(data.check.job_id);
+    Codequiry.emitter.on('update', function(data) {
+        console.log(data);
+    });
+});
+```
