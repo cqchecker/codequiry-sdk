@@ -1,4 +1,4 @@
-## NodeJS Wrapper for Codequiry API 
+# NodeJS Wrapper for Codequiry API 
 
 Codequiry is a commercial grade plagiarism and similarity detection software for source code files. Submissions are checked with billions of sources on the web as well as checked locally against provided submissions. This is a NodeJS example application for the API to check code plagiarism and similarity.
 
@@ -12,74 +12,74 @@ Checks return us tons of data such as similarity scores, individual file scores,
 Main Website: 
 https://codequiry.com
 
-API Docs:
+Full API Docs:
 https://codequiry.com/usage/api
 
-### Installation
+## Installation
 
 ```
 npm install codequiry
 ```
-
+#### Initializing
 ```
 var Codequiry = require('codequiry')
 ```
 
-Setting your API Key
+#### Setting your API Key
 ```
 Codequiry.setAPIKey('YOUR_API_KEY')
 ```
-
-Getting account information
+### Usage
+#### Getting account information
 ```javascript
 Codequiry.account(function(data, err)) {
 	 if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Getting checks
+#### Getting checks
 ```javascript
 Codequiry.checks(function(data, err)) {
 	 if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Creating checks (specify name and programming language)
+#### Creating checks (specify name and programming language)
 ```javascript
 Codequiry.createCheck('CheckNameHere', 'java', function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Uploading to a check (specify check_id and file (must be a zip file)) 
+#### Uploading to a check (specify check_id and file (must be a zip file)) 
 ```javascript
 Codequiry.uploadFile(CHECK_ID, './test.zip', function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Starting a check (specify check_id and if running database check or web check) 
+#### Starting a check (specify check_id and if running database check or web check) 
 ```javascript
 Codequiry.startCheck(CHECK_ID, false, false, function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Getting a check information/status
+#### Getting a check information/status
 ```javascript
 Codequiry.getCheck(CHECK_ID, function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Getting results overview
+#### Getting results overview
 ```javascript
 Codequiry.getOverview(CHECK_ID, function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
 ```
-Getting specific results of a submission
+#### Getting specific results of a submission
 ```javascript
 Codequiry.getResults(CHECK_ID, SUBMISSION_ID function(data, err) {
     if (!err) console.log(data);
