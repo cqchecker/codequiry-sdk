@@ -1,4 +1,4 @@
-# NodeJS Wrapper for Codequiry API 
+# NodeJS SDK for Codequiry API 
 
 Codequiry is a commercial grade plagiarism and similarity detection software for source code files. Submissions are checked with billions of sources on the web as well as checked locally against provided submissions. This is a NodeJS example application for the API to check code plagiarism and similarity.
 
@@ -45,6 +45,7 @@ Codequiry.checks(function(data, err)) {
 });
 ```
 #### Creating checks (specify name and programming language)
+Examples: java, c-cpp, python, csharp, txt
 ```javascript
 Codequiry.createCheck('CheckNameHere', 'java', function(data, err) {
     if (!err) console.log(data);
@@ -86,7 +87,7 @@ Codequiry.getResults(CHECK_ID, SUBMISSION_ID function(data, err) {
     else console.log(err)
 });
 ```
-## Realtime checking progress
+## Realtime checking progress - SocketIO
 This is an example of the listener, you can call this after getting a check status or after starting a check (both will reutrn a job ID, which you can listen to). Here we will listen to specific CHECK_ID.
 ```javascript
 Codequiry.getCheck(CHECK_ID, function(data) {
