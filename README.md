@@ -45,9 +45,134 @@ Codequiry.checks(function(data, err)) {
 });
 ```
 #### Creating checks (specify name and programming language)
-Examples: java, c-cpp, python, csharp, txt
+Examples: 
+```
+{
+    "error": "Invalid programming language, must be a valid language ID",
+    "available_languages": [
+        {
+            "id": 13,
+            "language": "Java (.java)"
+        },
+        {
+            "id": 14,
+            "language": "Python (.py)"
+        },
+        {
+            "id": 16,
+            "language": "C (.c/.h)"
+        },
+        {
+            "id": 17,
+            "language": "C/C++ (.cc/.c/.h/.cpp/.hpp)"
+        },
+        {
+            "id": 18,
+            "language": "C# (.cs)"
+        },
+        {
+            "id": 20,
+            "language": "Perl (.pl/.sh)"
+        },
+        {
+            "id": 21,
+            "language": "PHP (.php)"
+        },
+        {
+            "id": 22,
+            "language": "SQL (.sql)"
+        },
+        {
+            "id": 23,
+            "language": "VB (.vb/.bas)"
+        },
+        {
+            "id": 24,
+            "language": "XML (.xml)"
+        },
+        {
+            "id": 28,
+            "language": "Haskell (.hs/.lhs)"
+        },
+        {
+            "id": 29,
+            "language": "Pascal (.pas/.inc)"
+        },
+        {
+            "id": 30,
+            "language": "Go (.go)"
+        },
+        {
+            "id": 31,
+            "language": "Matlab (.m)"
+        },
+        {
+            "id": 32,
+            "language": "Lisp (.el)"
+        },
+        {
+            "id": 33,
+            "language": "Ruby (.rb)"
+        },
+        {
+            "id": 34,
+            "language": "Assembly (.asm/.s)"
+        },
+        {
+            "id": 38,
+            "language": "HTML Javascript (.html/.htm/.xhtml)"
+        },
+        {
+            "id": 39,
+            "language": "Javascript (.js/.ts)"
+        },
+        {
+            "id": 40,
+            "language": "HTML (.html/.htm/.xhtml)"
+        },
+        {
+            "id": 41,
+            "language": "Plain Text/ASCII (.txt)"
+        },
+        {
+            "id": 42,
+            "language": "Plain Text by Character (.txt)"
+        },
+        {
+            "id": 43,
+            "language": "Swift (.swift)"
+        },
+        {
+            "id": 44,
+            "language": "Kotlin (.kt/.kts)"
+        },
+        {
+            "id": 45,
+            "language": "Yacc (.y,.yy,.ypp,.yxx)"
+        },
+        {
+            "id": 46,
+            "language": "Lex (.l,.ll)"
+        },
+        {
+            "id": 47,
+            "language": "Elixir (.ex, .exs)"
+        },
+        {
+            "id": 48,
+            "language": "Python Jupyter Notebook (.ipynb)"
+        },
+        {
+            "id": 49,
+            "language": "Dart (.dart)"
+        }
+    ]
+}
+```
+
+
 ```javascript
-Codequiry.createCheck('CheckNameHere', 'java', function(data, err) {
+Codequiry.createCheck('CheckNameHere', '13', function(data, err) {
     if (!err) console.log(data);
     else console.log(err)
 });
