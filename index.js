@@ -118,7 +118,7 @@ function runner(route, postdata, callback) {
                 callback(res.data)
             }
         }).catch((err) => {
-            callback(null, err.response.data.error);
+            callback(null, err.response.data);
         })
     } else {
         callback(null, 'No API Key was set');
