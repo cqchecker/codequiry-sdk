@@ -32,20 +32,20 @@ Codequiry.setAPIKey('YOUR_API_KEY')
 ## Usage
 #### Getting account information
 ```javascript
-Codequiry.account(function(data, err)) {
+Codequiry.account(function(data, err) {
 	 if (!err) console.log(data);
     else console.log(err)
 });
 ```
 #### Getting checks
 ```javascript
-Codequiry.checks(function(data, err)) {
+Codequiry.checks(function(data, err) {
 	 if (!err) console.log(data);
     else console.log(err)
 });
 ```
-#### Creating checks (specify name and programming language)
-Examples: 
+#### Creating checks (specify name and programming language id)
+Error with available languages: 
 ```
 {
     "error": "Invalid programming language, must be a valid language ID",
